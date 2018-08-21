@@ -1,0 +1,12 @@
+/* pages/mine/mine.wxss */
+.count{
+  display: flex;
+  padding-left: 20px;
+  font-size: 14px;
+}
+
+.count-num{
+  color: red;
+  margin-left: 10px;
+  margin-right: 10px;
+}

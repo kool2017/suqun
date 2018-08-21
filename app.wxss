@@ -1,0 +1,53 @@
+/**app.wxss**/
+@import 'weui.wxss';
+
+.app-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.app-swiper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.app-slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+.app-cmd-list {
+  height: 60px;
+}
+
+.app-cmd-list-item {
+  height: 40px;
+  width: 40px;
+}
+
+.app-cmd-list-item-image {
+  height: 50px;
+  width: 50px;
+}
+
+.app-icon {
+  display: flex;
+  flex-direction: column;
+}
+
+.app-icon-img {
+  flex: 1;
+  height: 40px;
+  width: 40px;
+  margin: auto;
+}
+
+.app-icon-font {
+  flex: 1;
+  height: 20px;
+  line-height: 15px;
+  font-size: 14px;
+}

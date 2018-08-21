@@ -1,0 +1,19 @@
+{
+  "tabBar": {
+    "selectedColor": "#1296db",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/ico-home.png",
+        "selectedIconPath": "images/ico-home-d.png"
+      },
+      {
+        "pagePath": "pages/vow/vow",
+        "text": "祈福",
+        "iconPath": "images/ico-setting.png",
+        "selectedIconPath": "images/ico-setting-d.png"
+      }
+    ]
+  }
+}

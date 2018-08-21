@@ -1,0 +1,21 @@
+/* pages/vow/vow.wxss */
+
+.incense-radio-group {
+  width: 100%;
+}
+
+.incense-radio {
+  width: 100%;
+  padding-left: 20px;
+}
+
+.radio-image {
+  width: 50px;
+  height: 50px;
+}
+
+.textarea {
+  width: 90%;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}

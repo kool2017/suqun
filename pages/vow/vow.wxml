@@ -1,0 +1,42 @@
+<!--pages/vow/vow.wxml-->
+<view class="app-container">
+  <view class="weui-panel">
+    <view class="weui-panel__hd">请滑动选择佛像</view>
+    <view class="weui-panel__bd">
+      <view class="app-swiper">
+        <swiper indicator-dots="{{true}}" autoplay="{{false}}" circular="{{true}}">
+          <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+            <swiper-item class="app-swiper-item">
+              <image src="{{item}}" class="app-slide-image" />
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__hd">请在香谱中选一种类型</view>
+    <view class="weui-panel__bd">
+      <radio-group class="incense-radio-group" bindchange="changeIncense">
+        <label wx:for="{{incense}}" wx:key="value">
+          <radio value="{{item.value}}" class="incense-radio" checked="{{item.checked}}">
+            <image src="{{item.imgSrc}}" class="radio-image" /> {{item.name}}
+          </radio>
+        </label>
+      </radio-group>
+    </view>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__hd">倾诉</view>
+    <view class="weui-panel__bd">
+      <textarea class="textarea" placeholder="说点什么吧..." maxlength="1000" value="{{vowDsp}}" bindinput="inputVowDsp">
+      </textarea>
+    </view>
+  </view>
+
+  <view class="page__bd page__bd_spacing">
+    <button class="weui-btn" type="primary" bindtap="vowSubmit" loading="{{loading}}">上 香</button>
+  </view>
+</view>

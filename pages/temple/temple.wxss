@@ -1,0 +1,8 @@
+.temple-detail {
+  width: 100%;
+}
+
+.vow-info {
+  font-size: 14px;
+  padding-left: 15px;
+}

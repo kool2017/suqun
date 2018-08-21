@@ -1,0 +1,65 @@
+<!--pages/mine/mine.wxml-->
+<view class="app-container">
+  <view class="page-section page-section-gap">
+    <map id="myMap" style="width: 100%; height: 250px;" latitude="{{latitude}}" longitude="{{longitude}}" scale="{{scale}}" markers="{{markers}}" polyline="{{polyline}}" show-location></map>
+  </view>
+  <view class="btn-area">
+    <button bindtap="translateMarker" class="page-body-button" type="primary">刷新</button>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <view class="count">
+        我有
+        <view class="count-num">{{vowNum}}</view>个祈福正在路上
+      </view>
+      <view class="count">
+        我有
+        <view class="count-num">{{vowFinNum}}</view>个祈福已传达
+      </view>
+      <view class="count">
+        我有
+        <view class="count-num">{{votiveNum}}</view>个还愿已传达
+      </view>
+    </view>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+      <scroll-view style="height: 250px;" scroll-y="true" bindscrolltolower="query">
+        <view wx:for="{{list}}" wx:key="{{id}}" class="weui-media-box weui-media-box_appmsg">
+          <view class="weui-media-box__hd weui-media-box__hd_in-appmsg">
+            <image class="weui-media-box__thumb" src="{{item.imgSrc}}" />
+          </view>
+          <view wx:if="{{item.type==='vow'}}">
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title">上香</view>
+              <view class="weui-media-box__desc">{{item.datetime}} : {{item.dsp}}</view>
+              <view wx:if="{{item.state==='0'}}" class="weui-media-box__desc">距传达还有{{item.hour}}小时{{item.minute}}分钟{{item.second}}秒</view>
+              <view wx:elif="{{item.state==='1'}}" class="weui-media-box__desc">已传达</view>
+              <view wx:elif="{{item.state==='2'}}" class="weui-media-box__desc">已还愿</view>
+            </view>
+          </view>
+          <view wx:if="{{item.type==='votive'}}">
+            <view class="weui-media-box__bd weui-media-box__bd_in-appmsg">
+              <view class="weui-media-box__title">还愿</view>
+              <view class="weui-media-box__desc">{{item.datetime}} : {{item.dsp}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="weui-loadmore" hidden="{{!searchLoading}}">
+          <view class="weui-loading"></view>
+          <view class="weui-loadmore__tips">正在载入更多...</view>
+        </view>
+        <view class="weui-loadmore weui-loadmore_line" hidden="{{!searchLoadingComplete}}">
+          <view class="weui-loadmore__tips weui-loadmore__tips_in-line">已加载全部</view>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <view class="weui-panel">
+    <view class="weui-panel__bd">
+    </view>
+  </view>
+</view>

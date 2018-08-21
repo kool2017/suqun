@@ -1,0 +1,101 @@
+<view class="app-container">
+  <view class="temple-detail">
+
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <view class="app-swiper">
+          <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}">
+            <block wx:for="{{imgUrls}}" wx:key="{{imgUrls}}">
+              <swiper-item class="app-swiper-item">
+                <image src="{{item}}" class="app-slide-image" />
+              </swiper-item>
+            </block>
+          </swiper>
+        </view>
+        <view class="weui-media-box weui-media-box_text">
+          <view class="weui-media-box__title weui-media-box__title_in-text">{{templeName}}</view>
+          <view class="weui-media-box__info">
+            <view class="weui-media-box__info__meta">{{location}}</view>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel">
+      <view class="weui-media-box weui-media-box_text">
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">信徒数:{{followerNum}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">心诚度:{{faithNum}}</view>
+        </view>
+        <view class="weui-media-box__info">
+          <view class="weui-media-box__info__meta">上香数:{{vowNum}}</view>
+          <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">还愿数:{{votiveNum}}</view>
+        </view>
+      </view>
+    </view>
+
+    <view class="weui-panel">
+      <view class="weui-form-preview__ft">
+        <navigator url="../vow/vow" class="weui-form-preview__btn weui-form-preview__btn_default">
+          <view class="app-icon">
+            <image src="../../img/2722c67bdd5940ebaf59d123dc39403a.png" class="app-icon-img"></image>
+            <view class="app-icon-font">上香</view>
+          </view>
+        </navigator>
+        <navigator url="../votive/votive" class="weui-form-preview__btn weui-form-preview__btn_default">
+          <view class="app-icon">
+            <image src="../../img/19bf5be46f174d65a32760c0181ab1b2.png" class="app-icon-img"></image>
+            <view class="app-icon-font">还愿</view>
+          </view>
+        </navigator>
+      </view>
+    </view>
+
+    <view class="weui-panel">
+      <view class="weui-panel__hd">上香</view>
+      <view class="weui-panel__bd">
+        <swiper autoplay="true" interval="1000" duration="3000" circular="true" vertical="true" display-multiple-items="5">
+          <block wx:for="{{vow}}" wx:key="{{item.dateTime}}">
+            <swiper-item>
+              <view class="vow-info">{{item.followerName}} : {{item.vowDsp}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+    <view class="weui-panel">
+      <view class="weui-panel__hd">还愿</view>
+      <view class="weui-panel__bd">
+        <swiper autoplay="{{true}}" interval="{{1000}}" duration="{{3000}}" circular="{{true}}" vertical="{{true}}" display-multiple-items="{{5}}">
+          <block wx:for="{{votive}}" wx:key="{{item.dateTime}}">
+            <swiper-item>
+              <view class="vow-info">{{item.followerName}} : {{item.votiveDsp}}</view>
+            </swiper-item>
+          </block>
+        </swiper>
+      </view>
+    </view>
+
+    <view class="weui-panel">
+      <view class="weui-panel__bd">
+        <view class="weui-article">
+
+          <view wx:for="{{textContent}}" wx:key="{{item.title}}">
+            <view class="weui-article__h1">{{item.title}}</view>
+            <view class="weui-article__section">
+              <view class="weui-article__p">
+                <image class="weui-article__img" src="{{app.globalData.imgSrc}}{{item.imgSrc}}" mode="aspectFit" style="height: 180px" />
+              </view>
+              <text class="weui-article__p" decode="{{true}}">
+                {{item.paragraph}}
+              </text>
+            </view>
+          </view>
+
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>

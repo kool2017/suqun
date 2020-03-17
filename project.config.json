@@ -13,8 +13,10 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
 	"appid": "wxa4816063a03d1a22",
-	"projectname": "yutongyanliyoushenme",
+	"projectname": "suqun",
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,

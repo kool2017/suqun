@@ -10,7 +10,7 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "雨桐眼里有什么",
+    "navigationBarTitleText": "suqun",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
@@ -29,5 +29,6 @@
         "selectedIconPath": "img/a166b571e04d4e4480a3b3738ff3d0e9.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
